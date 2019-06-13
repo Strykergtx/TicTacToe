@@ -13,14 +13,67 @@ public static int[][] ticbox;
 		//loop through columns from 0 to 3 and check if all the 3 places have same marks
  		
 		//check both diagonals 
-		
+		int stat=-1;
 		
 		
 		//write your code here !!!
+		int xc,yc;
+	 	for(int i=0;i<3;i++)
+	 	{ xc=0; yc=0;
+	 		for(int j=0;j<3;j++)
+	 	{
+	 	  if(tic[i][j]==1)
+	 	  	 xc++;
+	 	  if(tic[j][i]==1)
+	 		 yc++; 
+	 	  
+	 		
+	 	}
+	 	if(xc==3||yc==3)
+	 	 {stat=0;
+	 	  break;
+	 	 }
+	 	}
 		
-		
-		
-		return 0;
+		//int c;
+		//for(int i=0;i<3;i++)
+		//{	c=0;
+		// for(int j=0;j<3;j++)
+		// 	{
+		 //	  if(tic[i][j]==1)
+		 //		 c++;
+		 //	  
+		 //	}
+		// if(c==3)
+		//	 {stat=0;
+		//	  break;
+		//	 }
+		//}
+	 	
+		int c=-1;
+	 	for(int i=0;i<3;i++)
+	 	{
+	 		if(tic[i][i]==1)
+	 	  c++;
+	 	}
+	 	if(c==3)
+	    stat=0;
+	 	
+	 int x=2;
+	    c=0;
+	 	for(int i=0;i<3;i++)
+	 	{ if(tic[i][x]==1)
+	 		c++;
+	 	   x--;
+ 		
+	 	}
+	 	if(c==3)
+	 		stat=0;
+	 	
+	 	if(stat==0)
+	 		return 1;
+	 	else
+	 		return 2;
 		
 	}
 	
@@ -38,11 +91,19 @@ public static int[][] ticbox;
 		//check if the selected box is empty ie, already not marked by other player
 		//if all checks passed return true.
 		
-		
+		int stat=-1;
 		//Write your code here !!!
 		
+		if(a1>=0 && a1<3 && a2>=0 && a2<3)
+		{
+		 if(tic[a1][a2]==0)	
+		  stat =0;
+		}
+		if(stat==0)
+		  return true;
+		else
+		  return false;	
 		
-		return false;
 	}
 	public static void main(String args[]) {
 		
